@@ -23,14 +23,14 @@ def about():
 
 @app.route("/contact", methods=["POST", "GET"])
 def contact():
-    my_mail = "vpn1vishal@gmail.com"
-    password = "ubieddhximrjadwk"
+    my_mail = "gmail"
+    password = "password"
     if request.method == "POST":
         form = request.form
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(my_mail, password)
             server.sendmail(my_mail, "thakurcmp1@gmail.com",
-                            msg=f"Subject: Really nigga \n\n"
+                            msg=f"Subject: Hello Vishal! \n\n"
                                 f"Name: {form['name']} \n"
                                 f"Email: {form['email']} \n"
                                 f"Phone: {form['phone']} \n"
